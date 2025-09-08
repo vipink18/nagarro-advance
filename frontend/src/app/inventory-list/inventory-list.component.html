@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<div>
+	<h2>Inventory List</h2>
+	<div class="inventory-list-buttons">
+		<button (click)="goToAdd()">Add Inventory</button>
+		<button (click)="goToEdit()">Edit Inventory</button>
+		<button (click)="goToDelete()">Delete Inventory</button>
+	</div>
+	<ul>
+		<li *ngFor="let item of items">
+			<strong>{{item.name}}</strong>
+			- Quantity: {{item.quantity}}
+			- Price: ₹{{item.price}}
+		</li>
+	</ul>
+	<div *ngIf="items.length === 0">No items found.</div>
+</div>

@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<div>
+	<h2>Edit Inventory</h2>
+	<div *ngIf="!selectedItem">
+		<h3>Select an item to edit:</h3>
+		<ul>
+			<li *ngFor="let item of items">
+				{{item.name}} - Quantity: {{item.quantity}} - Price: ₹{{item.price}}
+				<button (click)="selectItem(item)">Edit</button>
+			</li>
+		</ul>
+	</div>
+	<div *ngIf="selectedItem">
+		<h3>Editing: {{selectedItem.name}}</h3>
+		<label>Name: <input [(ngModel)]="selectedItem.name" /></label><br>
+		<label>Quantity: <input type="number" [(ngModel)]="selectedItem.quantity" /></label><br>
+		<label>Price: <input type="number" [(ngModel)]="selectedItem.price" /></label><br>
+		<button (click)="saveEdit()">Save</button>
+		<button (click)="selectedItem = null">Cancel</button>
+	</div>
+</div>

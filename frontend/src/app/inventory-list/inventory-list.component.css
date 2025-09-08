@@ -1,0 +1,41 @@
+/* Inventory List Buttons */
+.inventory-list-buttons {
+	display: flex;
+	gap: 16px;
+	margin-bottom: 24px;
+	justify-content: center;
+}
+
+.inventory-list-buttons button {
+	background: linear-gradient(90deg, #43a047 0%, #66bb6a 100%);
+	color: #fff;
+	border: none;
+	border-radius: 6px;
+	padding: 12px 28px;
+	font-size: 16px;
+	font-weight: 500;
+	cursor: pointer;
+	box-shadow: 0 2px 8px rgba(67, 160, 71, 0.15);
+	transition: background 0.2s, box-shadow 0.2s;
+}
+
+.inventory-list-buttons button:hover {
+	background: linear-gradient(90deg, #388e3c 0%, #43a047 100%);
+	box-shadow: 0 4px 16px rgba(67, 160, 71, 0.25);
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+li {
+	background: #f5f5f5;
+	margin-bottom: 12px;
+	padding: 16px;
+	border-radius: 6px;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+	font-size: 16px;
+}

@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: inventorydb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+  backend:
+    image: vipink18/inventory-backend:latest
+    environment:
+      SPRING_PROFILES_ACTIVE: docker   # 👈 or prod if you create prod profile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+      - redis
+
+  frontend:
+    image: vipink18/inventory-frontend:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - backend

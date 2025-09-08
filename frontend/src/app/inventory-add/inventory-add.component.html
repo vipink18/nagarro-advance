@@ -1,0 +1,10 @@
+<app-navbar></app-navbar>
+<div>
+	<h2>Add Inventory Item</h2>
+	<form (ngSubmit)="addItem()">
+		<label>Name: <input [(ngModel)]="newItem.name" name="name" required /></label><br>
+		<label>Quantity: <input type="number" [(ngModel)]="newItem.quantity" name="quantity" required /></label><br>
+		<label>Price: <input type="number" [(ngModel)]="newItem.price" name="price" required /></label><br>
+		<button type="submit">Add Item</button>
+	</form>
+</div>
